@@ -1,6 +1,6 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var StringList = require('./list');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import StringList from './list'
 
 // import { Router, Route, Link } from 'react-router'
 

@@ -10,4 +10,4 @@ const StringList = React.createClass({
 	}
 })
 
-module.exports = StringList
+export default StringList
