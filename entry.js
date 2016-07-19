@@ -15,15 +15,17 @@ const addItem = () => {
 	render()
 }
 const StringList = React.createClass({
-	render: () => React.DOM.ul({ key: 'list' }, list.map((item, pos) => React.createElement('li', { key: pos }, item))),
+	render: function() {
+		return React.DOM.ul({ key: 'list' }, this.props.data.map((item, pos) => React.createElement('li', { key: pos }, item)))
+	},
 	componentWillMount: () => console.log("mounting list")
 })
 const render = () => {
 	ReactDOM.render(
-		React.DOM.div({ data: list }, [
+		React.DOM.div(null, [
 			React.DOM.h1({ key: 'title' }, "Hello, world!" + list),
 			React.DOM.p({ key: 'p' }, "Paragraph"),
-			React.createElement(StringList, { key: 'list' }),
+			React.createElement(StringList, { key: 'list', data: list }),
 			buttonActive ? React.DOM.button({ onClick: addItem, key: 'button' }, "hello") : undefined
 
 		]),
