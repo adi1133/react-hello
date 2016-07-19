@@ -11,27 +11,27 @@ var ReactDOM = require('react-dom');
 var list = []
 var buttonActive = false
 const addItem = () => {
-  list = list.concat(Math.floor(Math.random()*100))
-  render()
+	list = list.concat(Math.floor(Math.random() * 100))
+	render()
 }
 const render = () => {
-  ReactDOM.render(
-    React.DOM.div({}, [
-      React.DOM.h1({key: 'title'}, "Hello, world!"),
-      React.DOM.p({key : 'p'}, "Paragraph"),
-      React.DOM.ul({key : 'list'}, list.map((item, pos)=> React.createElement('li', {key : pos}, item))),
-      buttonActive ? React.DOM.button({onClick : addItem, key: 'button'}, "hello") : undefined
+	ReactDOM.render(
+		React.DOM.div({}, [
+			React.DOM.h1({ key: 'title' }, "Hello, world!"),
+			React.DOM.p({ key: 'p' }, "Paragraph"),
+			React.DOM.ul({ key: 'list' }, list.map((item, pos) => React.createElement('li', { key: pos }, item))),
+			buttonActive ? React.DOM.button({ onClick: addItem, key: 'button' }, "hello") : undefined
 
-    ]),
+		]),
 
-    document.getElementById('container')
-  );
+		document.getElementById('container')
+	);
 }
 
 render()
 
 
-setTimeout(()=>{
-  buttonActive = true
-  render()
+setTimeout(() => {
+	buttonActive = true
+	render()
 }, 1000)
