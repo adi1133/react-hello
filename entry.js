@@ -16,11 +16,11 @@ const addItem = () => {
 }
 const render = () => {
   ReactDOM.render(
-    React.createElement('div', {}, [
-      React.createElement('h1', {key: 'title'}, "Hello, world!"),
-      React.createElement('p', {key : 'p'}, "Paragraph"),
-      React.createElement('ul', {key : 'list'}, list.map((item, pos)=> React.createElement('li', {key : pos}, item))),
-      buttonActive ? React.createElement('button', {onClick : addItem, key: 'button'}, "hello") : undefined
+    React.DOM.div({}, [
+      React.DOM.h1({key: 'title'}, "Hello, world!"),
+      React.DOM.p({key : 'p'}, "Paragraph"),
+      React.DOM.ul({key : 'list'}, list.map((item, pos)=> React.createElement('li', {key : pos}, item))),
+      buttonActive ? React.DOM.button({onClick : addItem, key: 'button'}, "hello") : undefined
 
     ]),
 
