@@ -2,7 +2,7 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-
+var StringList = require('./list');
 // ReactDOM.render(
 //   <h1>Hello, world!</h1>,
 //   document.getElementById('example')
@@ -14,12 +14,7 @@ const addItem = () => {
 	list = list.concat(Math.floor(Math.random() * 100))
 	render()
 }
-const StringList = React.createClass({
-	render: function() {
-		return React.DOM.ul({ key: 'list' }, this.props.data.map((item, pos) => React.createElement('li', { key: pos }, item)))
-	},
-	componentWillMount: () => console.log("mounting list")
-})
+
 const render = () => {
 	ReactDOM.render(
 		React.DOM.div(null, [
