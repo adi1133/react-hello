@@ -1,12 +1,8 @@
-//document.write("It works.");
-
 var React = require('react');
 var ReactDOM = require('react-dom');
 var StringList = require('./list');
-// ReactDOM.render(
-//   <h1>Hello, world!</h1>,
-//   document.getElementById('example')
-// );
+
+// import { Router, Route, Link } from 'react-router'
 
 var list = []
 var buttonActive = false

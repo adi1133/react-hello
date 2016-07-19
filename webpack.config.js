@@ -8,11 +8,11 @@ module.exports = {
 		loaders: [
 			{ test: /\.css$/, loader: "style!css" },
 			{
-				test: /\.jsx$/, // Match both .js and .jsx files
+				test: /\.jsx?$/, // Match both .js and .jsx files
 				exclude: /node_modules/,
 				loader: "babel-loader",
 				query: {
-					presets: ['react']
+					presets: ['es2015', 'react']
 				}
 			}
 		]
