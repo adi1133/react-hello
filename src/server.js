@@ -10,3 +10,6 @@ server.get('/bundle.js', (req, res) => res.sendFile(path.join(__dirname, 'public
 server.listen(port, () => {
     console.log(`The server is running at http://localhost:${port}/`);
 });
+
+
+console.log("hi")
