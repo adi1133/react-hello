@@ -17,16 +17,22 @@ class NavDecorator extends React.Component {
 
 class TodoComponent extends React.Component {
     render() {
-        return <Todo value={this.props.route.value} onAdd={this.props.route.onAdd}/>
+        return <Todo value={this.props.value} onAdd={this.props.onAdd}/>
     }
 }
 class App extends React.Component {
+
+    routes = (
+        <Route component={NavDecorator}>
+            <Route path="/" component={() => (<TodoComponent value={this.props.value} onAdd={this.props.onAdd}/>)}/>
+            <Route path="/user" component={User}/>
+        </Route>
+    );
+
     render() {
+        const {value, onAdd} = this.props;
         return <Router history={browserHistory}>
-            <Route component={NavDecorator}>
-                <Route value={this.props.value} onAdd={this.props.onAdd} path="/" component={TodoComponent}/>
-                <Route path="/user" component={User}/>
-            </Route>
+            {this.routes}
         </Router>
     }
 }
