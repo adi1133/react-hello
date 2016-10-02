@@ -1,39 +1,32 @@
 import React from "react";
 import StringList from "./list";
-import {Link} from "react-router";
 
 
-var list = [];
-var buttonActive = false;
-const addItem = function () {
-    list = list.concat(Math.floor(Math.random() * 100));
-    //this.setState({})
-    this.forceUpdate()
-};
+class Todo extends React.Component {
+    state = {
+        list: []
+    };
 
-const Pag1 = React.createClass((() => {
-    var timer;
-    return {
-        getInitialState: () => ({}),
-        componentWillMount: function () {
-            var self = this;
-            timer = setTimeout(() => {
-                self.setState({buttonActive: true})
-            }, 1000)
-        },
-        componentWillUnmount: () => clearTimeout(timer),
-        render: function () {
-            return <div>
-                <h1 key="title">A list{String(list)}</h1>
-                <StringList key="list" data={list}/> {this.state.buttonActive
-                ? <button onClick={addItem.bind(this)} key="button">hello</button>
-                : undefined
-            }
-                <Link to={'user'}>Some Link</Link>
+    addItem = () => {
+        this.setState({list: this.state.list.concat([Math.random() * 1000 | 0])});
+    };
 
-            </div>
-        }
+    handleSubmit = () => {
+        console.log('test')
+    };
+
+    render() {
+        return <div>
+            <h1 key="title">A list{String(this.state.list)}</h1>
+            <StringList key="list" data={this.state.list}/>
+            <button onClick={this.addItem} key="button">hello</button>
+            <input
+                type="text"
+                autoFocus="true"
+                onKeyDown={this.handleSubmit}/>
+        </div>
     }
-})());
 
-export default Pag1;
+}
+
+export default Todo;
