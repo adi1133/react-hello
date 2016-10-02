@@ -9,7 +9,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node build/server",
+    "start": "babel-node tools/run bundle start",
     "bundle": "babel-node tools/run bundle"
   },
   "author": "",

@@ -2,7 +2,8 @@ import run from './run'
 import bundle from './bundle'
 
 async function start() {
-    run(bundle)
+    await run(bundle);
+    require('../build/server')
 }
 
 export default start
