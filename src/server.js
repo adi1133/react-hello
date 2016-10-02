@@ -1,6 +1,6 @@
-import express from 'express'
-import path from 'path'
-import {port} from './config'
+import express from "express";
+import path from "path";
+import {port} from "./config";
 
 const server = express();
 
