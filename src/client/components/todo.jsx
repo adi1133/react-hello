@@ -3,23 +3,15 @@ import StringList from "./list";
 
 
 class Todo extends React.Component {
-    state = {
-        list: []
-    };
-
-    addItem = () => {
-        this.setState({list: this.state.list.concat([Math.random() * 1000 | 0])});
-    };
-
     handleSubmit = () => {
-        console.log('test')
+        console.log("da")
     };
 
     render() {
         return <div>
-            <h1 key="title">A list{String(this.state.list)}</h1>
-            <StringList key="list" data={this.state.list}/>
-            <button onClick={this.addItem} key="button">hello</button>
+            <h1 key="title">A list{String(this.props.value)}</h1>
+            <StringList key="list" data={this.props.value}/>
+            <button onClick={this.props.onAdd} key="button">hello</button>
             <input
                 type="text"
                 autoFocus="true"

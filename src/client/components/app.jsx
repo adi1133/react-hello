@@ -19,14 +19,14 @@ class App extends React.Component {
     render() {
         return <Router history={browserHistory}>
             <Route component={NavDecorator}>
-                <Route path="/" component={Todo}/>
+                <Route data="{props.value}" path="/" component={Todo}/>
                 <Route path="/user" component={User}/>
             </Route>
         </Router>
     }
 }
 
-export default App
+export default Todo
 
 
 
