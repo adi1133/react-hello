@@ -1,7 +1,8 @@
-
+import run from './run'
+import bundle from './bundle'
 
 async function start() {
-    console.log("hi")
+    run(bundle)
 }
 
 export default start
