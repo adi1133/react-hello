@@ -3,7 +3,7 @@ import {Router, Route, browserHistory, Link} from "react-router";
 import Todo from "./todo";
 import User from "./user";
 
-const NavDecorator = React.createClass({
+class NavDecorator extends React.Component {
     render() {
         return <div>
             <nav>
@@ -13,16 +13,20 @@ const NavDecorator = React.createClass({
             <div>{this.props.children}</div>
         </div>
     }
-});
+}
 
-const Pag2 = React.createClass({
-    render: () =>
-        <Router history={browserHistory}>
+class App extends React.Component {
+    render() {
+        return <Router history={browserHistory}>
             <Route component={NavDecorator}>
                 <Route path="/" component={Todo}/>
                 <Route path="/user" component={User}/>
             </Route>
         </Router>
-});
+    }
+}
 
-export default Pag2
+export default App
+
+
+
