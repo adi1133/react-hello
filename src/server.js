@@ -5,7 +5,7 @@ import {port} from "./config";
 const server = express();
 
 server.get('/bundle.js', (req, res) => res.sendFile(path.join(__dirname, 'public', 'main.js')));
-server.get('*', (req, res) => res.sendFile(path.join(__dirname, require('file-loader!./client/index.html'))));
+server.use((req, res) => res.sendFile(path.join(__dirname, require('file-loader!./client/index.html'))));
 
 
 server.listen(port, () => {

@@ -24,8 +24,7 @@ const Pag1 = React.createClass((() => {
         componentWillUnmount: () => clearTimeout(timer),
         render: function () {
             return <div>
-                <h1 key="title">Hello, world!{String(list)}</h1>
-                <p key="p">Paragraph</p>
+                <h1 key="title">A list{String(list)}</h1>
                 <StringList key="list" data={list}/> {this.state.buttonActive
                 ? <button onClick={addItem.bind(this)} key="button">hello</button>
                 : undefined
