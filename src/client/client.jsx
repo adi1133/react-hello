@@ -4,7 +4,7 @@ import App from "./components/app";
 import {createStore} from "redux";
 
 
-const counter = (state = [], action) => {
+const counter = (state = ["xo"], action) => {
     console.log('state', state, action);
     switch (action.type) {
         case 'ADD':

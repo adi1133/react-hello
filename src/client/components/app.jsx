@@ -15,18 +15,23 @@ class NavDecorator extends React.Component {
     }
 }
 
+class TodoComponent extends React.Component {
+    render() {
+        return <Todo value={this.props.route.value} onAdd={this.props.route.onAdd}/>
+    }
+}
 class App extends React.Component {
     render() {
         return <Router history={browserHistory}>
             <Route component={NavDecorator}>
-                <Route data="{props.value}" path="/" component={Todo}/>
+                <Route value={this.props.value} onAdd={this.props.onAdd} path="/" component={TodoComponent}/>
                 <Route path="/user" component={User}/>
             </Route>
         </Router>
     }
 }
 
-export default Todo
+export default App
 
 
 
