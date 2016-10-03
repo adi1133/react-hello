@@ -11,7 +11,9 @@
   "scripts": {
     "start": "babel-node tools/run start",
     "bundle": "babel-node tools/run bundle",
-    "monitor": "concurrently --kill-others 'babel-node node_modules/webpack/bin/webpack --watch --config tools/webpack.config.js' 'nodemon build/server'"
+    "bundle watch": "babel-node node_modules/webpack/bin/webpack --watch --config tools/webpack.config.js",
+    "monitor": "concurrently --kill-others 'babel-node node_modules/webpack/bin/webpack --watch --config tools/webpack.config.js' 'nodemon build/server'",
+    "pm2": "pm2 start build/server.js"
   },
   "author": "",
   "license": "ISC",
