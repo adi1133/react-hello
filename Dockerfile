@@ -1,4 +1,4 @@
-FROM node:0.10-slim
+FROM mhart/alpine-node:0.10
 
 WORKDIR /app
 ADD package.json /app/
