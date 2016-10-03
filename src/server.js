@@ -11,3 +11,8 @@ server.use((req, res) => res.sendFile(path.join(__dirname, require('file-loader!
 server.listen(port, () => {
     console.log(`The server is running at http://localhost:${port}/`);
 });
+
+
+setTimeout(function () {
+    throw "Will I restart?"
+}, 10000);
