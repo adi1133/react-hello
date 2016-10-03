@@ -41,3 +41,8 @@
     "redux": "^3.6.0"
   }
 }
+// docker run -p 80:3000 --restart always foo2 --name foox2
+// us.gcr.io/inspiring-hope-140123/foo
+// https://cloud.google.com/container-registry/docs/pushing
+
+//docker run -p 80:3000 --restart always us.gcr.io/inspiring-hope-140123/foo2 --name foox2
